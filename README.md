@@ -50,7 +50,7 @@ Nothing else. The studio has no extra packages to install.
 Open a terminal (on Mac: the *Terminal* app) and run:
 
 ```bash
-git clone https://github.com/<your-username>/higgsfield-studio.git
+git clone https://github.com/Ibrahim-Khe/higgsfield-studio.git
 cd higgsfield-studio
 ```
 
