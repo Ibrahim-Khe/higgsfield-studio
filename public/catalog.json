@@ -1,0 +1,8382 @@
+{
+ "updated": "2026-09-26T19:10:00.113Z",
+ "models": [
+  {
+   "slug": "alibaba/happy-horse/image-to-video",
+   "title": "Happy Horse 1.0",
+   "variant": "Image to Video",
+   "system": "alibaba/happy-horse/image-to-video",
+   "operation": "image2video",
+   "description": "Happy Horse 1.0 - Image to Video. Configured Alibaba route; cloned from hh/image-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A player in a brown number 22 jersey runs with the football. He dodges a diving defender and races past the others into the end zone. He slows down, looks up, and smiles."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/happy-horse/reference-to-video",
+   "title": "Happy Horse 1.0",
+   "variant": "Reference to Video",
+   "system": "alibaba/happy-horse/reference-to-video",
+   "operation": "image2video",
+   "description": "Happy Horse 1.0 - Reference to Video. Configured Alibaba route; cloned from happy-horse/reference-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+     "image_urls",
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      }
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A player in a brown number 22 jersey runs with the football. He dodges a diving defender and races past the others into the end zone. He slows down, looks up, and smiles."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/happy-horse/text-to-video",
+   "title": "Happy Horse 1.0",
+   "variant": "Text to Video",
+   "system": "alibaba/happy-horse/text-to-video",
+   "operation": "image2video",
+   "description": "Generates videos from text or image references with clips up to 15 seconds and 1080p resolution.",
+   "schema": {
+    "type": "object",
+    "title": "Happy Horse",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1",
+       "4:3",
+       "3:4"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A player in a brown number 22 jersey runs with the football. He dodges a diving defender and races past the others into the end zone. He slows down, looks up, and smiles."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/happy-horse/v1.1/image-to-video",
+   "title": "HappyHorse 1.1",
+   "variant": "Image to Video",
+   "system": "alibaba/happy-horse/v1.1/image-to-video",
+   "operation": "image2video",
+   "description": "HappyHorse 1.1 - Image to Video. Configured Alibaba route; cloned from hh/image-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "1080p"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A pirate woman drinks tea as giant tentacles attack the ship. She walks through the frozen chaos and removes her glasses. She snaps her fingers, and everything starts moving again."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.126,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/happy-horse/v1.1/reference-to-video",
+   "title": "HappyHorse 1.1",
+   "variant": "Reference to Video",
+   "system": "alibaba/happy-horse/v1.1/reference-to-video",
+   "operation": "image2video",
+   "description": "HappyHorse 1.1 - Reference to Video. Configured Alibaba route; cloned from happy-horse/reference-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+     "image_urls",
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      }
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "1080p"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A pirate woman drinks tea as giant tentacles attack the ship. She walks through the frozen chaos and removes her glasses. She snaps her fingers, and everything starts moving again."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.126,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/happy-horse/v1.1/text-to-video",
+   "title": "HappyHorse 1.1",
+   "variant": "Text to Video",
+   "system": "alibaba/happy-horse/v1.1/text-to-video",
+   "operation": "image2video",
+   "description": "Generates videos from text or image references with output at 1080p and clips up to 15 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Happy Horse",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "1080p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1",
+       "4:3",
+       "3:4"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString"
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea"
+    }
+   },
+   "initial": {
+    "prompt": "A pirate woman drinks tea as giant tentacles attack the ship. She walks through the frozen chaos and removes her glasses. She snaps her fingers, and everything starts moving again."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.098,
+    "max": 0.126,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0-prime/image-to-video",
+   "title": "Wan 3.0 Prime Image to Video",
+   "variant": "Image to Video",
+   "system": "wan3.0-prime",
+   "operation": "image2video",
+   "description": "Generate videos from a starting image with Wan 3.0 Prime.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Prime Image to Video",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First Frame",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last Frame",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A rider in brown gallops on a white horse through a desert filled with giant colorful crystals. A huge glass bird swoops overhead. The rider follows it between the crystals and out onto an open sandy plain."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.0476,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0-prime/reference-to-video",
+   "title": "Wan 3.0 Prime Reference to Video",
+   "variant": "Reference to Video",
+   "system": "wan3.0-prime",
+   "operation": "image2video",
+   "description": "Generate videos guided by reference images with Wan 3.0 Prime.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Prime Reference to Video",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "file_url": {
+      "type": "string",
+      "title": "Reference Document",
+      "format": "uri",
+      "description": "One document (docx/xlsx/pptx/pdf/md). Forces deep thinking."
+     },
+     "link_url": {
+      "type": "string",
+      "title": "Reference Web Page",
+      "format": "uri",
+      "description": "One public page. Forces deep thinking. Not combinable with file_url."
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Audio",
+      "maxItems": 5,
+      "description": "Up to 5 files, 30s total. WAV or MP3."
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Images",
+      "maxItems": 10
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Videos",
+      "maxItems": 5,
+      "description": "Up to 5 clips, 30s total, each 1-30s."
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "file_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "link_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "audio_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A rider in brown gallops on a white horse through a desert filled with giant colorful crystals. A huge glass bird swoops overhead. The rider follows it between the crystals and out onto an open sandy plain."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.0476,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0-prime/text-to-video",
+   "title": "Wan 3.0 Prime Text to Video",
+   "variant": "Text to Video",
+   "system": "wan3.0-prime",
+   "operation": "text2video",
+   "description": "Generates videos from text or media references with fast processing and clips up to 30 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Prime Text to Video",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A rider in brown gallops on a white horse through a desert filled with giant colorful crystals. A huge glass bird swoops overhead. The rider follows it between the crystals and out onto an open sandy plain."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.0476,
+    "max": 0.196,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0/image-to-video",
+   "title": "Wan 3.0 Image to Video",
+   "variant": "Image to Video",
+   "system": "wan3.0",
+   "operation": "image2video",
+   "description": "Generate videos from a starting image with Wan 3.0.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Image to Video",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First Frame",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last Frame",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman wearing futuristic glasses walks down a gray street. The city and her clothes transform into a colorful anime world. She takes off the glasses, and everything returns to normal."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.025,
+    "max": 0.1,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0/reference-to-video",
+   "title": "Wan 3.0 Reference to Video",
+   "variant": "Reference to Video",
+   "system": "wan3.0",
+   "operation": "image2video",
+   "description": "Generate videos guided by reference images with Wan 3.0.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Reference to Video",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "file_url": {
+      "type": "string",
+      "title": "Reference Document",
+      "format": "uri",
+      "description": "One document (docx/xlsx/pptx/pdf/md). Forces deep thinking."
+     },
+     "link_url": {
+      "type": "string",
+      "title": "Reference Web Page",
+      "format": "uri",
+      "description": "One public page. Forces deep thinking. Not combinable with file_url."
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Audio",
+      "maxItems": 5,
+      "description": "Up to 5 files, 30s total. WAV or MP3."
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Images",
+      "maxItems": 10
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference Videos",
+      "maxItems": 5,
+      "description": "Up to 5 clips, 30s total, each 1-30s."
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "file_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "link_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "audio_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman wearing futuristic glasses walks down a gray street. The city and her clothes transform into a colorful anime world. She takes off the glasses, and everything returns to normal."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.025,
+    "max": 0.1,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "alibaba/wan-3.0/text-to-video",
+   "title": "Wan 3.0 Text to Video",
+   "variant": "Text to Video",
+   "system": "wan3.0",
+   "operation": "text2video",
+   "description": "Generates videos from text or images with native audio and adjustable duration up to 30 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Text to Video",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration (sec)",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 2,
+      "description": "2-30 seconds."
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "1080p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "adaptive"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "adaptive"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Sound",
+      "default": true
+     },
+     "enable_thinking": {
+      "type": "boolean",
+      "title": "Deep Thinking",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "enable_thinking": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman wearing futuristic glasses walks down a gray street. The city and her clothes transform into a colorful anime world. She takes off the glasses, and everything returns to normal."
+   },
+   "durations": [
+    2,
+    30
+   ],
+   "price": {
+    "min": 0.025,
+    "max": 0.1,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.0/image-to-video",
+   "title": "Seedance 2.0",
+   "variant": "Image to Video",
+   "system": "seedance-2-0-sale",
+   "operation": "image2video",
+   "description": "Generate videos from text with controls for duration, resolution, aspect ratio, and optional audio. Create polished multi-shot stories for ads, social content, and cinematic scenes",
+   "schema": {
+    "type": "object",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 4
+     },
+     "image_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p",
+       "4k"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "end_image_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString"
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a strapless dress and a man in a suit stand beside a yellow car at a desert gas station. Close-ups show their outfits and jewelry before they walk forward in slow motion. The camera returns to them by the pumps, then cuts to her face."
+   },
+   "durations": [
+    4,
+    15
+   ],
+   "price": {
+    "min": 0.0985,
+    "max": 1.0887,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.0/reference-to-video",
+   "title": "Seedance 2.0",
+   "variant": "Reference to Video (with video reference)",
+   "system": "seedance-2-0-sale",
+   "operation": "image2video",
+   "description": "Seedance 2.0 Reference to Video generates videos from images or existing videos, allowing customization of duration, resolution, aspect ratio, and audio inputs. It supports image-to-video and video-to-video transformations with optional audio generation.",
+   "schema": {
+    "if": {
+     "required": [
+      "image_urls"
+     ]
+    },
+    "else": {
+     "required": [
+      "video_urls"
+     ]
+    },
+    "type": "object",
+    "required": [],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 4
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 3,
+      "minItems": 1
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 9,
+      "minItems": 1
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p",
+       "4k"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 3,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "21:9"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a strapless dress and a man in a suit stand beside a yellow car at a desert gas station. Close-ups show their outfits and jewelry before they walk forward in slow motion. The camera returns to them by the pumps, then cuts to her face."
+   },
+   "durations": [
+    4,
+    15
+   ],
+   "price": {
+    "min": 0.1182,
+    "max": 1.3064,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.0/text-to-video",
+   "title": "Seedance 2.0",
+   "variant": "Text to Video",
+   "system": "seedance-2-0-sale",
+   "operation": "text2video",
+   "description": "Creates 4K video from text or media references. Supports up to 15 seconds with optional sound.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 4
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p",
+       "4k"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "21:9"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a strapless dress and a man in a suit stand beside a yellow car at a desert gas station. Close-ups show their outfits and jewelry before they walk forward in slow motion. The camera returns to them by the pumps, then cuts to her face."
+   },
+   "durations": [
+    4,
+    15
+   ],
+   "price": {
+    "min": 0.0985,
+    "max": 1.0887,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.5/image-to-video",
+   "title": "Seedance 2.5",
+   "variant": "Image to Video",
+   "system": "seedance-2-5-sale",
+   "operation": "image2video",
+   "description": "Seedance 2.5 Image to Video generates videos from a single image URL with optional prompts, customizable duration, resolution, and output format. It supports adding an end image and generating audio to enhance the video output.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 4
+     },
+     "image_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "bitrate_mode": {
+      "enum": [
+       "standard",
+       "high"
+      ],
+      "type": "string",
+      "default": "high"
+     },
+     "end_image_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "bitrate_mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString"
+    }
+   },
+   "initial": {
+    "prompt": "A traveler takes off on a griffin, flying past floating islands and waterfalls. They skim a river, and the rider touches the water. The camera dives underwater to reveal glowing creatures, then follows the griffin back into the sky."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.144,
+    "max": 0.7961,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.5/reference-to-video",
+   "title": "Seedance 2.5",
+   "variant": "Reference to Video (with video reference)",
+   "system": "seedance-2-5-sale",
+   "operation": "image2video",
+   "description": "Seedance 2.5 Reference to Video generates videos from images, videos, or audio inputs with customizable duration, resolution, aspect ratio, and output format. It supports image-to-video and video-to-video transformations, allowing creative control through prompts and audio integration.",
+   "schema": {
+    "if": {
+     "required": [
+      "image_urls"
+     ]
+    },
+    "else": {
+     "if": {
+      "required": [
+       "video_urls"
+      ]
+     },
+     "else": {
+      "required": [
+       "audio_urls"
+      ]
+     }
+    },
+    "type": "object",
+    "required": [],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 4
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "21:9"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "bitrate_mode": {
+      "enum": [
+       "standard",
+       "high"
+      ],
+      "type": "string",
+      "default": "high"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "bitrate_mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A traveler takes off on a griffin, flying past floating islands and waterfalls. They skim a river, and the rider touches the water. The camera dives underwater to reveal glowing creatures, then follows the griffin back into the sky."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.1728,
+    "max": 0.9553,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.5/text-to-video",
+   "title": "Seedance 2.5",
+   "variant": "Text to Video",
+   "system": "seedance-2-5-sale",
+   "operation": "text2video",
+   "description": "Generates videos from text, images, video, and audio references, with optional audio generation.\nSupports videos up to 30 seconds with customizable resolution, aspect ratio, and output format.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 4
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "21:9"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "bitrate_mode": {
+      "enum": [
+       "standard",
+       "high"
+      ],
+      "type": "string",
+      "default": "high"
+     },
+     "output_format": {
+      "enum": [
+       "mp4",
+       "mov"
+      ],
+      "type": "string",
+      "default": "mp4"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "prompt": {
+     "ui:placeholder": "Write your prompt here"
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "bitrate_mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A traveler takes off on a griffin, flying past floating islands and waterfalls. They skim a river, and the rider touches the water. The camera dives underwater to reveal glowing creatures, then follows the griffin back into the sky."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.144,
+    "max": 0.7961,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.5/video-edit",
+   "title": "Seedance 2.5",
+   "variant": "Video Edit",
+   "system": "seedance-2-5-sale",
+   "operation": "video2video",
+   "description": "Generate videos from text, images, video, and audio references, with clips up to 30 seconds.\nAnimate images, edit or extend existing footage, and generate audio alongside your video.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "prompt",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "video_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "bitrate_mode": {
+      "enum": [
+       "standard",
+       "high"
+      ],
+      "type": "string",
+      "default": "high"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "bitrate_mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A traveler takes off on a griffin, flying past floating islands and waterfalls. They skim a river, and the rider touches the water. The camera dives underwater to reveal glowing creatures, then follows the griffin back into the sky."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.1728,
+    "max": 0.9553,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "bytedance/seedance-2.5/video-extend",
+   "title": "Seedance 2.5",
+   "variant": "Video Extend",
+   "system": "seedance-2-5-sale",
+   "operation": "video2video",
+   "description": "Seedance 2.5 Video Extend generates extended video content from an input video URL and text prompt, supporting up to 30 seconds duration and optional audio or image inputs. It outputs videos in 480p or 720p resolution with mp4 or mov format, allowing control over audio generation and multiple media inputs.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "prompt",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 4
+     },
+     "video_url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "bitrate_mode": {
+      "enum": [
+       "standard",
+       "high"
+      ],
+      "type": "string",
+      "default": "high"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "bitrate_mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A traveler takes off on a griffin, flying past floating islands and waterfalls. They skim a river, and the rider touches the water. The camera dives underwater to reveal glowing creatures, then follows the griffin back into the sky."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.1728,
+    "max": 0.9553,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "higgsfield/cinema-studio/4.0",
+   "title": "Cinema Studio 4.0",
+   "variant": "Cinema Studio 4.0",
+   "system": "seedance-2-5-sale",
+   "operation": "video2video",
+   "description": "Generates cinematic videos from text, image, or video references with automatic scene direction.\nSupports videos up to 30 seconds, optional sound, and customizable resolution and aspect ratio.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "era": {
+      "enum": [
+       "1960s",
+       "1980s",
+       "1990s",
+       "2000s",
+       "2020s"
+      ],
+      "type": "string"
+     },
+     "genre": {
+      "enum": [
+       "epic",
+       "drama",
+       "noir",
+       "comedy",
+       "horror",
+       "action"
+      ],
+      "type": "string"
+     },
+     "light": {
+      "enum": [
+       "silhouette",
+       "practicals",
+       "window",
+       "overhead-fall",
+       "contre-jour",
+       "soft-cross"
+      ],
+      "type": "string"
+     },
+     "pacing": {
+      "enum": [
+       "chaotic",
+       "dynamic",
+       "calm",
+       "single-shot"
+      ],
+      "type": "string"
+     },
+     "prompt": {
+      "type": "string",
+      "pattern": "\\S",
+      "minLength": 1
+     },
+     "duration": {
+      "type": "integer",
+      "default": 5,
+      "maximum": 30,
+      "minimum": 4
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 30
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "maxItems": 10
+     },
+     "camera_lens": {
+      "enum": [
+       "clean-sharp",
+       "anamorphic",
+       "vintage-anamorphic",
+       "warm-vintage",
+       "halation-vintage"
+      ],
+      "type": "string"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16",
+       "21:9"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "camera_model": {
+      "enum": [
+       "modern",
+       "35mm-film",
+       "8mm-film",
+       "dv-camcorder"
+      ],
+      "type": "string"
+     },
+     "color_palette": {
+      "enum": [
+       "static-noon",
+       "twilight-fable",
+       "back-row-kissing-seats",
+       "on-the-other-side-of-the-porthole",
+       "the-emerald-ambush",
+       "highway-standoff",
+       "the-faded-fresco",
+       "oil-ochre",
+       "the-mountain-convent",
+       "ghost-in-the-code",
+       "pink-velvet",
+       "two-days-to-the-horizon",
+       "industrial-fog",
+       "stairs-go-up",
+       "field-post",
+       "home-is-the-next-gas-station",
+       "glossy-flesh",
+       "the-crimson-ballet",
+       "neon-rain-at-midnight",
+       "the-morning-after-rain",
+       "the-iron-borough",
+       "the-ground",
+       "the-investigation",
+       "turquoise-mirage",
+       "a-dream-in-color",
+       "breakfast-on-schedule",
+       "favela-gold",
+       "a-hotel-for-one",
+       "after-dark",
+       "crimson-vigi",
+       "the-neighbors-saw-everything",
+       "the-grey-channel",
+       "mirage-at-noon",
+       "bubblegum-boulevard",
+       "yellow-room",
+       "the-earth-keeps-things-reluctantly",
+       "tropic-fever-dream",
+       "bioluminescent-night",
+       "dont-turn-it-off-im-watching",
+       "the-silk-curtain-falls",
+       "the-butterfly",
+       "playtime",
+       "wallpaper-romance",
+       "overtime",
+       "the-way-home-is-longer",
+       "everyone-speaks-in-whispers",
+       "runaway-summer",
+       "amber-wasteland",
+       "the-circus",
+       "gasoline-sunset"
+      ],
+      "type": "string"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "default": true
+     },
+     "camera_aperture": {
+      "enum": [
+       "f14-wide-open",
+       "f4-moderate",
+       "f11-deep-focus"
+      ],
+      "type": "string"
+     },
+     "camera_movement": {
+      "enum": [
+       "snorricam",
+       "robot-arm",
+       "tilt-up",
+       "rack-focus",
+       "tilt-down",
+       "pov",
+       "pan-left",
+       "crane-up",
+       "pan-right",
+       "crane-down",
+       "side-tracking",
+       "pedestal-up",
+       "pedestal-down",
+       "handheld",
+       "tracking",
+       "drone-orbit",
+       "dolly-zoom",
+       "aerial-pullback",
+       "static-shot",
+       "bullet-time",
+       "whip-pan",
+       "slow-zoom-in",
+       "arc-left",
+       "slow-zoom-out",
+       "arc-right",
+       "truck-right",
+       "dolly-in",
+       "truck-left",
+       "dolly-out",
+       "slider-right",
+       "crush-zoom",
+       "slider-left",
+       "helicopter-shot"
+      ],
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "era": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "genre": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "light": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "pacing": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_urls",
+     "video_urls",
+     "audio_urls",
+     "duration",
+     "resolution",
+     "aspect_ratio",
+     "camera_model",
+     "camera_lens",
+     "camera_aperture",
+     "camera_movement",
+     "era",
+     "genre",
+     "light",
+     "pacing",
+     "color_palette",
+     "generate_audio"
+    ],
+    "audio_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "camera_lens": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "camera_model": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "color_palette": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_aperture": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_movement": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A knight in silver armor and a blue tunic stabs a horned monster in the leg. The monster kicks him away and chases him downhill. It knocks him into a deep pit, then swings its fist down into it."
+   },
+   "durations": [
+    4,
+    30
+   ],
+   "price": {
+    "min": 0.2057,
+    "max": 0.4623,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "kling-video/motion-control/pro",
+   "title": "Kling 2.6",
+   "variant": "Motion Control (Pro)",
+   "system": "kling2_6_motion_control",
+   "operation": "image2video",
+   "description": "Kling 2.6 Motion Control (Pro) generates videos by animating a source image using the motion from a provided video. Users can control character orientation and choose to retain the original video's sound for customized video creation.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Motion Control Playground",
+    "required": [
+     "image_url",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "default": "",
+      "description": "Write your prompt here"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "video_url": {
+      "type": "string",
+      "title": "Video URL",
+      "format": "uri"
+     },
+     "keep_original_sound": {
+      "enum": [
+       "yes",
+       "no"
+      ],
+      "type": "string",
+      "title": "Keep original sound",
+      "default": "yes"
+     },
+     "character_orientation": {
+      "enum": [
+       "image",
+       "video"
+      ],
+      "type": "string",
+      "title": "Character orientation",
+      "default": "video",
+      "description": "Generate the orientation of the characters in the video, which can be selected to match the image or the video"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "video_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "keep_original_sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "character_orientation": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a pink hoodie holds a pole on the subway. The space around her stretches and twists, distorting the carriage. She loses her balance and grips the pole with both hands."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0616,
+    "max": 0.0616,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/motion-control/std",
+   "title": "Kling 2.6",
+   "variant": "Motion Control (Standard)",
+   "system": "kling2_6_motion_control",
+   "operation": "image2video",
+   "description": "Kling 2.6 Motion Control (Standard) generates videos by animating a source image using motion from a reference video. Users provide an image URL and a video URL, with options to keep the original sound and align character orientation to either the image or video.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Motion Control Playground",
+    "required": [
+     "image_url",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "default": "",
+      "description": "Write your prompt here"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "video_url": {
+      "type": "string",
+      "title": "Video URL",
+      "format": "uri"
+     },
+     "keep_original_sound": {
+      "enum": [
+       "yes",
+       "no"
+      ],
+      "type": "string",
+      "title": "Keep original sound",
+      "default": "yes"
+     },
+     "character_orientation": {
+      "enum": [
+       "image",
+       "video"
+      ],
+      "type": "string",
+      "title": "Character orientation",
+      "default": "video",
+      "description": "Generate the orientation of the characters in the video, which can be selected to match the image or the video"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "video_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "keep_original_sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "character_orientation": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a pink hoodie holds a pole on the subway. The space around her stretches and twists, distorting the carriage. She loses her balance and grips the pole with both hands."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0385,
+    "max": 0.0385,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/o3/first-last-frame",
+   "title": "Kling O3",
+   "variant": "First/Last Frame",
+   "system": "",
+   "operation": "image2video",
+   "description": "Generates and edits videos using image or video references, multi-shot scenes and native sound.",
+   "schema": {
+    "if": {
+     "properties": {
+      "multi_shots": {
+       "const": true
+      }
+     }
+    },
+    "else": {
+     "required": [
+      "prompt",
+      "first_frame_url"
+     ]
+    },
+    "then": {
+     "required": [
+      "multi_prompt",
+      "first_frame_url"
+     ]
+    },
+    "type": "object",
+    "title": "Kling O3 Playground",
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro",
+       "4k"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "default": "off"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string"
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "last_frame_url": {
+      "type": "string",
+      "title": "Last frame URL",
+      "format": "uri"
+     },
+     "first_frame_url": {
+      "type": "string",
+      "title": "First frame URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "first_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a silver outfit roller-skates through a city square. The camera pulls back, revealing a giant floating orange cat surrounded by pink jellyfish. She skates beneath the cat toward the camera."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0616,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/o3/image-reference",
+   "title": "Kling O3",
+   "variant": "Image Reference",
+   "system": "",
+   "operation": "image2video",
+   "description": "Kling O3 Image Reference generates videos from one or multiple images using customizable prompts and settings like duration, aspect ratio, and sound. It supports both single and multi-shot workflows with options for intelligent or customized shot types.",
+   "schema": {
+    "if": {
+     "properties": {
+      "multi_shots": {
+       "const": true
+      }
+     }
+    },
+    "else": {
+     "required": [
+      "prompt"
+     ]
+    },
+    "then": {
+     "required": [
+      "multi_prompt"
+     ]
+    },
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro",
+       "4k"
+      ],
+      "type": "string",
+      "default": "std"
+     },
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "default": "off"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "shot_type": {
+      "enum": [
+       "customize",
+       "intelligent"
+      ],
+      "type": "string",
+      "default": "customize"
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      }
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string"
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 0
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "last_frame_url": {
+      "type": "string",
+      "title": "Last frame URL",
+      "format": "uri"
+     },
+     "first_frame_url": {
+      "type": "string",
+      "title": "First frame URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "mode",
+     "duration",
+     "aspect_ratio",
+     "image_urls",
+     "elements",
+     "sound",
+     "shot_type",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "shot_type": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_prompt": {
+     "items": {
+      "duration": {
+       "ui:widget": "range"
+      }
+     },
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "first_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a silver outfit roller-skates through a city square. The camera pulls back, revealing a giant floating orange cat surrounded by pink jellyfish. She skates beneath the cat toward the camera."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0462,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/o3/video-edit",
+   "title": "Kling O3",
+   "variant": "Video Edit",
+   "system": "",
+   "operation": "image2video",
+   "description": "Kling O3 Video Edit generates edited videos from a single input video URL and optional images or elements, guided by a text prompt. Users can select modes including standard, professional, or 4K to customize output quality.",
+   "schema": {
+    "type": "object",
+    "title": "Kling O3 Playground",
+    "required": [
+     "prompt",
+     "video_urls"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro",
+       "4k"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video URL",
+       "format": "uri"
+      },
+      "maxItems": 1,
+      "minItems": 1
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range"
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a silver outfit roller-skates through a city square. The camera pulls back, revealing a giant floating orange cat surrounded by pink jellyfish. She skates beneath the cat toward the camera."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0693,
+    "max": 0.0693,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/o3/video-reference",
+   "title": "Kling O3",
+   "variant": "Video Reference",
+   "system": "",
+   "operation": "image2video",
+   "description": "Kling O3 Video Reference generates videos based on a text prompt and a single reference video URL. Users can customize duration, aspect ratio, and optionally include images or elements to influence the output.",
+   "schema": {
+    "type": "object",
+    "title": "Kling O3 Playground",
+    "required": [
+     "prompt",
+     "video_urls"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 10,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video URL",
+       "format": "uri"
+      },
+      "maxItems": 1,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a silver outfit roller-skates through a city square. The camera pulls back, revealing a giant floating orange cat surrounded by pink jellyfish. She skates beneath the cat toward the camera."
+   },
+   "durations": [
+    3,
+    10
+   ],
+   "price": {
+    "min": 0.0693,
+    "max": 0.0924,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/omni/first-last-frame",
+   "title": "Kling Omni",
+   "variant": "First/Last Frame",
+   "system": "kling_omni_flf",
+   "operation": "image2video",
+   "description": "Generates and edits videos using image or video references and controls for start and end frames.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+     "prompt",
+     "first_frame_url"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "default": "16:9"
+     },
+     "last_frame_url": {
+      "type": "string",
+      "title": "Last frame URL",
+      "format": "uri"
+     },
+     "first_frame_url": {
+      "type": "string",
+      "title": "First frame URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "last_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "first_frame_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a purple jacket draws her bow beside a blossoming cherry tree. She aims straight at the camera and holds for a moment. Her arrow shoots past, sending pink petals swirling through the air."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0616,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/omni/image-reference",
+   "title": "Kling Omni",
+   "variant": "Image Reference",
+   "system": "kling_omni_image_reference",
+   "operation": "image2video",
+   "description": "Kling Omni Image Reference generates videos from images and text prompts, allowing customization of duration, aspect ratio, and elements. It supports modes for standard or professional output, making it suitable for creating dynamic video content from static images.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 10,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      }
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a purple jacket draws her bow beside a blossoming cherry tree. She aims straight at the camera and holds for a moment. Her arrow shoots past, sending pink petals swirling through the air."
+   },
+   "durations": [
+    3,
+    10
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0616,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/omni/video-edit",
+   "title": "Kling Omni",
+   "variant": "Video Edit",
+   "system": "kling_video_edit",
+   "operation": "image2video",
+   "description": "Kling Omni Video Edit enables video generation from a single input video URL combined with text prompts and optional images or elements. Users can select between standard and pro modes to customize the editing process.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+     "prompt",
+     "video_urls"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video URL",
+       "format": "uri"
+      },
+      "maxItems": 1,
+      "minItems": 1
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard"
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a purple jacket draws her bow beside a blossoming cherry tree. She aims straight at the camera and holds for a moment. Her arrow shoots past, sending pink petals swirling through the air."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0693,
+    "max": 0.0693,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/omni/video-reference",
+   "title": "Kling Omni",
+   "variant": "Video Reference",
+   "system": "kling_video_reference",
+   "operation": "image2video",
+   "description": "Kling Omni Video Reference generates videos from a single input video URL combined with a text prompt and optional images or elements. It supports customizable duration and aspect ratios, enabling creative video synthesis based on reference footage.",
+   "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+     "prompt",
+     "video_urls"
+    ],
+    "properties": {
+     "mode": {
+      "enum": [
+       "std",
+       "pro"
+      ],
+      "type": "string",
+      "default": "pro"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "mode": {
+       "enum": [
+        "std",
+        "pro"
+       ],
+       "type": "string",
+       "default": "pro"
+      },
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 10,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image URL",
+       "format": "uri"
+      },
+      "maxItems": 4,
+      "minItems": 0
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video URL",
+       "format": "uri"
+      },
+      "maxItems": 1,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "mode": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a purple jacket draws her bow beside a blossoming cherry tree. She aims straight at the camera and holds for a moment. Her arrow shoots past, sending pink petals swirling through the air."
+   },
+   "durations": [
+    3,
+    10
+   ],
+   "price": {
+    "min": 0.0693,
+    "max": 0.0924,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v2.5-turbo/pro/image-to-video",
+   "title": "Kling 2.5 Turbo Pro",
+   "variant": "Image to Video (Pro)",
+   "system": "v2.5-turbo",
+   "operation": "image2video",
+   "description": "Kling 2.5 Turbo Pro converts a single image into a short video clip using a text prompt to guide the animation style. Users can specify video duration, CFG scale for prompt adherence, and provide negative prompts to refine output.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 2.5 Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative Prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "negative_prompt",
+     "cfg_scale",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman lies down and closes her eyes. A pink glow envelops her as she floats through space. She suddenly falls back onto her bed."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0385,
+    "max": 0.0385,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v2.5-turbo/pro/text-to-video",
+   "title": "Kling 2.5 Turbo Pro",
+   "variant": "Text to Video (Pro)",
+   "system": "v2.5-turbo",
+   "operation": "text2video",
+   "description": "Provides high-end text-to-video output featuring seamless movement, cinematic-quality imagery, and standout prompt fidelity",
+   "schema": {
+    "type": "object",
+    "title": "Kling 2.5 Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative Prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "negative_prompt",
+     "cfg_scale",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman lies down and closes her eyes. A pink glow envelops her as she floats through space. She suddenly falls back onto her bed."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0385,
+    "max": 0.0385,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v2.5-turbo/standard/image-to-video",
+   "title": "Kling 2.5 Turbo Standard",
+   "variant": "Image to Video (Standard)",
+   "system": "v2.5-turbo",
+   "operation": "image2video",
+   "description": "Generates videos from text prompts and images, with fast generation and precise prompt control.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 2.5 Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative Prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "negative_prompt",
+     "cfg_scale",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman lies down and closes her eyes. A pink glow envelops her as she floats through space. She suddenly falls back onto her bed."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0231,
+    "max": 0.0231,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v2.6/pro/image-to-video",
+   "title": "Kling 2.6 Pro",
+   "variant": "Image to Video (Pro)",
+   "system": "kling-v2.6",
+   "operation": "image2video",
+   "description": "Kling 2.6 Pro Image to Video generates short videos from a single image URL using a text prompt to guide the transformation. Users can customize video duration, aspect ratio, sound inclusion, and CFG scale to control creativity and output style.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 2.6 Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio"
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "aspect_ratio",
+     "cfg_scale",
+     "sound",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a pink hoodie holds a pole on the subway. The space around her stretches and twists, distorting the carriage. She loses her balance and grips the pole with both hands."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0385,
+    "max": 0.077,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v2.6/pro/text-to-video",
+   "title": "Kling 2.6 Pro",
+   "variant": "Text to Video (Pro)",
+   "system": "kling-v2.6",
+   "operation": "text2video",
+   "description": "Generates videos and sound from text or images, including dialogue, sound effects and ambience.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 2.6 Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "aspect_ratio",
+     "cfg_scale",
+     "sound",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a pink hoodie holds a pole on the subway. The space around her stretches and twists, distorting the carriage. She loses her balance and grips the pole with both hands."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.0385,
+    "max": 0.077,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0-turbo/image-to-video",
+   "title": "Kling 3.0 Turbo",
+   "variant": "Image to Video (Turbo)",
+   "system": "kling-v3.0",
+   "operation": "image2video",
+   "description": "Kling 3.0 Turbo converts a single image into a short video clip using a text prompt to guide the animation. Users can specify the video duration between 3 to 15 seconds and choose between 720p or 1080p resolution for output.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Turbo",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range"
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "last_image_url": {
+     "ui:widget": "imageUrlString"
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0616,
+    "max": 0.077,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0-turbo/text-to-video",
+   "title": "Kling 3.0 Turbo",
+   "variant": "Text to Video (Turbo)",
+   "system": "kling-v3.0",
+   "operation": "text2video",
+   "description": "Kling 3.0 Turbo generates videos from text prompts, allowing customization of duration (3 to 15 seconds), resolution (720p or 1080p), and aspect ratio (16:9, 9:16, or 1:1). This variant focuses on efficient text-to-video creation with flexible output settings.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Turbo",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "aspect_ratio",
+     "duration",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range"
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0616,
+    "max": 0.077,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/4k/image-to-video",
+   "title": "Kling 3.0 4k",
+   "variant": "Image to Video (4K)",
+   "system": "kling-v3.0",
+   "operation": "image2video",
+   "description": "Kling 3.0 4K converts a single image URL into a video up to 15 seconds long, with optional sound generation and multi-shot or multi-prompt support. Users can customize duration, prompts, and configuration scale to influence the video output.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 0
+     },
+     "last_image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "last_image_url",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.231,
+    "max": 0.231,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/4k/text-to-video",
+   "title": "Kling 3.0",
+   "variant": "Text to Video (4K)",
+   "system": "kling-v3.0",
+   "operation": "text2video",
+   "description": "Generates videos from text or images, with optional audio generation and output in 4K resolution.\nSupports multi-shot sequences, start and end frames, and video durations from 3 to 15 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 0
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "aspect_ratio",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.231,
+    "max": 0.231,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/pro/image-to-video",
+   "title": "Kling 3.0 Pro",
+   "variant": "Image to Video (Pro)",
+   "system": "kling-v3.0",
+   "operation": "image2video",
+   "description": "Kling 3.0 Image to Video (Pro) generates videos from a single image URL with optional sound and customizable duration up to 15 seconds. It supports multi-shot sequences with multiple prompts and fine-tuning via CFG scale for creative video outputs.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 0
+     },
+     "last_image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "last_image_url",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0616,
+    "max": 0.0924,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/pro/text-to-video",
+   "title": "Kling 3.0 Pro",
+   "variant": "Text to Video (Pro)",
+   "system": "kling-v3.0",
+   "operation": "text2video",
+   "description": "Kling 3.0 Text to Video (Pro) generates videos from text prompts with customizable duration, aspect ratio, and sound options. It supports multi-shot sequences and fine-tuning via CFG scale for creative video outputs.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 0
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "aspect_ratio",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0616,
+    "max": 0.0924,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/std/image-to-video",
+   "title": "Kling 3.0 Standard",
+   "variant": "Image to Video (Standard)",
+   "system": "kling-v3.0",
+   "operation": "image2video",
+   "description": "Kling 3.0 Standard converts a single image URL into a video clip with optional sound and customizable duration up to 15 seconds. Users can enhance the output with prompts, multiple shots, and control the CFG scale for creative variation.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "last_image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "last_image_url",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0693,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3.0/std/text-to-video",
+   "title": "Kling 3.0 Standard",
+   "variant": "Text to Video (Standard)",
+   "system": "kling-v3.0",
+   "operation": "text2video",
+   "description": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "properties": {
+     "sound": {
+      "enum": [
+       "on",
+       "off"
+      ],
+      "type": "string",
+      "title": "Generate sound",
+      "default": "on"
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 3
+     },
+     "elements": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "cfg_scale": {
+      "type": "number",
+      "title": "CFG Scale",
+      "default": 0.5,
+      "maximum": 1,
+      "minimum": 0,
+      "multipleOf": 0.01
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "multi_prompt": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "prompt": {
+         "type": "string",
+         "maxLength": 512
+        },
+        "duration": {
+         "type": "integer",
+         "maximum": 15,
+         "minimum": 1
+        }
+       }
+      },
+      "maxItems": 6,
+      "minItems": 1
+     }
+    }
+   },
+   "ui": {
+    "sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "elements": {
+     "ui:widget": "hidden",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "aspect_ratio",
+     "duration",
+     "cfg_scale",
+     "sound",
+     "multi_shots",
+     "multi_prompt",
+     "*"
+    ],
+    "cfg_scale": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    3,
+    15
+   ],
+   "price": {
+    "min": 0.0462,
+    "max": 0.0462,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3/motion-control/pro",
+   "title": "Kling 3.0",
+   "variant": "Motion Control (Pro)",
+   "system": "kling3_0_motion_control",
+   "operation": "image2video",
+   "description": "Kling 3.0 Motion Control (Pro) generates videos by animating a source image according to the motion in a provided video. Users can control character orientation and choose to retain the original video's sound for customized motion-driven video creation.",
+   "schema": {
+    "type": "object",
+    "title": "Kling V3 Motion Control Playground",
+    "required": [
+     "image_url",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "default": "",
+      "description": "Write your prompt here"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "video_url": {
+      "type": "string",
+      "title": "Video URL",
+      "format": "uri"
+     },
+     "keep_original_sound": {
+      "enum": [
+       "yes",
+       "no"
+      ],
+      "type": "string",
+      "title": "Keep original sound",
+      "default": "yes"
+     },
+     "character_orientation": {
+      "enum": [
+       "image",
+       "video"
+      ],
+      "type": "string",
+      "title": "Character orientation",
+      "default": "video",
+      "description": "Generate the orientation of the characters in the video, which can be selected to match the image or the video"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "video_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "keep_original_sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "character_orientation": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0924,
+    "max": 0.0924,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "kling-video/v3/motion-control/std",
+   "title": "Kling 3.0",
+   "variant": "Motion Control (Standard)",
+   "system": "kling3_0_motion_control",
+   "operation": "image2video",
+   "description": "Kling 3.0 Motion Control (Standard) generates videos by animating a source image according to the motion in a provided video. Users can control character orientation and choose to retain the original video's sound for customized video creation.",
+   "schema": {
+    "type": "object",
+    "title": "Kling V3 Motion Control Playground",
+    "required": [
+     "image_url",
+     "video_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "default": "",
+      "description": "Write your prompt here"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "video_url": {
+      "type": "string",
+      "title": "Video URL",
+      "format": "uri"
+     },
+     "keep_original_sound": {
+      "enum": [
+       "yes",
+       "no"
+      ],
+      "type": "string",
+      "title": "Keep original sound",
+      "default": "yes"
+     },
+     "character_orientation": {
+      "enum": [
+       "image",
+       "video"
+      ],
+      "type": "string",
+      "title": "Character orientation",
+      "default": "video",
+      "description": "Generate the orientation of the characters in the video, which can be selected to match the image or the video"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "video_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_url": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "keep_original_sound": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "character_orientation": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man jumps up from a field of pink flowers, throwing petals into the air. Four people dive forward and fly above the flowers with their arms outstretched. The camera follows them, then rises as they fly away together."
+   },
+   "durations": [
+    1
+   ],
+   "price": {
+    "min": 0.0693,
+    "max": 0.0693,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "lightricks/ltx-2.5/image-to-video/fast",
+   "title": "LTX-2.5 Fast",
+   "variant": "Image to Video",
+   "system": "flux3-video",
+   "operation": "image2video",
+   "description": "LTX-2.5 Fast Image to Video on Runware with native audio and optional camera movement.",
+   "schema": {
+    "type": "object",
+    "title": "LTX-2.5 Fast Image to Video Playground",
+    "required": [
+     "prompt",
+     "duration",
+     "image_url"
+    ],
+    "properties": {
+     "fps": {
+      "enum": [
+       24,
+       25,
+       48,
+       50
+      ],
+      "type": "integer",
+      "title": "Frames per second",
+      "default": 25
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 2,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       8,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First frame",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p",
+       "2k",
+       "4k"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last frame",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "camera_movement": {
+      "enum": [
+       "dolly_in",
+       "dolly_out",
+       "dolly_left",
+       "dolly_right",
+       "jib_up",
+       "jib_down",
+       "static",
+       "focus_shift"
+      ],
+      "type": "string",
+      "title": "Camera movement"
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "fps": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "aspect_ratio",
+     "fps",
+     "generate_audio",
+     "camera_movement",
+     "image_url",
+     "end_image_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_movement": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman runs through a parking lot while talking on her phone. She throws a miniature red car onto the ground. It grows into a full-sized car in front of her."
+   },
+   "durations": [
+    6,
+    8,
+    10
+   ],
+   "price": {
+    "min": 0.09,
+    "max": 0.3,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "lightricks/ltx-2.5/image-to-video/pro",
+   "title": "LTX-2.5 Pro",
+   "variant": "Image to Video",
+   "system": "flux3-video",
+   "operation": "image2video",
+   "description": "LTX-2.5 Pro Image to Video on Runware with native audio and optional camera movement.",
+   "schema": {
+    "type": "object",
+    "title": "LTX-2.5 Pro Image to Video Playground",
+    "required": [
+     "prompt",
+     "duration",
+     "image_url"
+    ],
+    "properties": {
+     "fps": {
+      "enum": [
+       24,
+       25,
+       50
+      ],
+      "type": "integer",
+      "title": "Frames per second",
+      "default": 25
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 2,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       8,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First frame",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last frame",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "camera_movement": {
+      "enum": [
+       "dolly_in",
+       "dolly_out",
+       "dolly_left",
+       "dolly_right",
+       "jib_up",
+       "jib_down",
+       "static",
+       "focus_shift"
+      ],
+      "type": "string",
+      "title": "Camera movement"
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "fps": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "aspect_ratio",
+     "fps",
+     "generate_audio",
+     "camera_movement",
+     "image_url",
+     "end_image_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_movement": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A warrior charges at a red-and-gray robot, which slides under his swing and dodges his next attacks. A fighter in white-and-blue armor jumps from a rooftop onto the street. Another fighter in a black helmet and pink skirt slides in on their knees, pulling the others together with cables."
+   },
+   "durations": [
+    6,
+    8,
+    10
+   ],
+   "price": {
+    "min": 0.12,
+    "max": 0.17,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "lightricks/ltx-2.5/text-to-video/fast",
+   "title": "LTX-2.5 Fast",
+   "variant": "Text to Video",
+   "system": "flux3-video",
+   "operation": "text2video",
+   "description": "Generates videos from text or images with native audio, camera motion controls and 4K resolution.",
+   "schema": {
+    "type": "object",
+    "title": "LTX-2.5 Fast Text to Video Playground",
+    "required": [
+     "prompt",
+     "duration"
+    ],
+    "properties": {
+     "fps": {
+      "enum": [
+       24,
+       25,
+       48,
+       50
+      ],
+      "type": "integer",
+      "title": "Frames per second",
+      "default": 25
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 2,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       8,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p",
+       "2k",
+       "4k"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "camera_movement": {
+      "enum": [
+       "dolly_in",
+       "dolly_out",
+       "dolly_left",
+       "dolly_right",
+       "jib_up",
+       "jib_down",
+       "static",
+       "focus_shift"
+      ],
+      "type": "string",
+      "title": "Camera movement"
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "fps": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "aspect_ratio",
+     "fps",
+     "generate_audio",
+     "camera_movement",
+     "*"
+    ],
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_movement": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman runs through a parking lot while talking on her phone. She throws a miniature red car onto the ground. It grows into a full-sized car in front of her."
+   },
+   "durations": [
+    6,
+    8,
+    10
+   ],
+   "price": {
+    "min": 0.09,
+    "max": 0.3,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "lightricks/ltx-2.5/text-to-video/pro",
+   "title": "LTX-2.5 Pro",
+   "variant": "Text to Video",
+   "system": "flux3-video",
+   "operation": "text2video",
+   "description": "Generates videos from text or images with native audio, camera motion controls and 1080p output.",
+   "schema": {
+    "type": "object",
+    "title": "LTX-2.5 Pro Text to Video Playground",
+    "required": [
+     "prompt",
+     "duration"
+    ],
+    "properties": {
+     "fps": {
+      "enum": [
+       24,
+       25,
+       50
+      ],
+      "type": "integer",
+      "title": "Frames per second",
+      "default": 25
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 2,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       8,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "camera_movement": {
+      "enum": [
+       "dolly_in",
+       "dolly_out",
+       "dolly_left",
+       "dolly_right",
+       "jib_up",
+       "jib_down",
+       "static",
+       "focus_shift"
+      ],
+      "type": "string",
+      "title": "Camera movement"
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "fps": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "aspect_ratio",
+     "fps",
+     "generate_audio",
+     "camera_movement",
+     "*"
+    ],
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "camera_movement": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A warrior charges at a red-and-gray robot, which slides under his swing and dodges his next attacks. A fighter in white-and-blue armor jumps from a rooftop onto the street. Another fighter in a black helmet and pink skirt slides in on their knees, pulling the others together with cables."
+   },
+   "durations": [
+    6,
+    8,
+    10
+   ],
+   "price": {
+    "min": 0.12,
+    "max": 0.17,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "minimax/h3/image-to-video",
+   "title": "MiniMax H3",
+   "variant": "Image to Video",
+   "system": "MiniMax-H3",
+   "operation": "image2video",
+   "description": "MiniMax H3 / Hailuo-03 preview integration using Video Generation V2.",
+   "schema": {
+    "type": "object",
+    "title": "MiniMax H3 Image to Video Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 5
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First frame URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "2K"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "2K"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "auto",
+       "adaptive",
+       "21:9",
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "auto"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last frame URL",
+      "format": "uri"
+     },
+     "aigc_watermark": {
+      "type": "boolean",
+      "title": "AIGC watermark",
+      "default": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "end_image_url",
+     "aspect_ratio",
+     "duration",
+     "resolution",
+     "aigc_watermark",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "aigc_watermark": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a voluminous black dress stands in a gallery before a red painting. Close-ups show her hand on the dress, her profile, and the hem. The camera zooms in on her face as she speaks to the viewer."
+   },
+   "durations": [
+    5,
+    15
+   ],
+   "price": {
+    "min": 0.091,
+    "max": 0.091,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "minimax/h3/reference-to-video",
+   "title": "MiniMax H3",
+   "variant": "Reference to Video",
+   "system": "MiniMax-H3",
+   "operation": "image2video",
+   "description": "MiniMax H3 generates videos from reference images or videos using Video Generation V2. Users provide prompts, reference media URLs, and optional audio to create videos up to 15 seconds with customizable resolution and aspect ratio.",
+   "schema": {
+    "if": {
+     "required": [
+      "image_urls"
+     ]
+    },
+    "else": {
+     "required": [
+      "video_urls"
+     ]
+    },
+    "type": "object",
+    "title": "MiniMax H3 Reference to Video Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 5
+     },
+     "audio_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference audio URLs",
+      "maxItems": 3,
+      "minItems": 0
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference image URLs",
+      "maxItems": 9,
+      "minItems": 1
+     },
+     "resolution": {
+      "enum": [
+       "2K"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "2K"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "format": "uri"
+      },
+      "title": "Reference video URLs",
+      "maxItems": 3,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "auto",
+       "adaptive",
+       "21:9",
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "auto"
+     },
+     "aigc_watermark": {
+      "type": "boolean",
+      "title": "AIGC watermark",
+      "default": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_urls",
+     "video_urls",
+     "audio_urls",
+     "aspect_ratio",
+     "duration",
+     "resolution",
+     "aigc_watermark",
+     "*"
+    ],
+    "audio_urls": {
+     "items": {
+      "ui:widget": "audioUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aigc_watermark": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a voluminous black dress stands in a gallery before a red painting. Close-ups show her hand on the dress, her profile, and the hem. The camera zooms in on her face as she speaks to the viewer."
+   },
+   "durations": [
+    5,
+    15
+   ],
+   "price": {
+    "min": 0.091,
+    "max": 0.091,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "minimax/h3/text-to-video",
+   "title": "MiniMax H3",
+   "variant": "Text to Video",
+   "system": "MiniMax-H3",
+   "operation": "text2video",
+   "description": "Generates 2K videos up to 15 seconds using text, image, video, and optional audio reference files.",
+   "schema": {
+    "type": "object",
+    "title": "MiniMax H3 Text to Video Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 5
+     },
+     "resolution": {
+      "enum": [
+       "2K"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "2K"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "auto",
+       "adaptive",
+       "21:9",
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "auto"
+     },
+     "aigc_watermark": {
+      "type": "boolean",
+      "title": "AIGC watermark",
+      "default": false
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "aspect_ratio",
+     "duration",
+     "resolution",
+     "aigc_watermark",
+     "*"
+    ],
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aigc_watermark": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a voluminous black dress stands in a gallery before a red painting. Close-ups show her hand on the dress, her profile, and the hem. The camera zooms in on her face as she speaks to the viewer."
+   },
+   "durations": [
+    5,
+    15
+   ],
+   "price": {
+    "min": 0.091,
+    "max": 0.091,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "minimax/hailuo-2.3/standard/image-to-video",
+   "title": "MiniMax Hailuo 2.3 Standard",
+   "variant": "Image to Video (Standard)",
+   "system": "minimax-v2.3",
+   "operation": "image2video",
+   "description": "MiniMax Hailuo 2.3 Standard converts a single image into a short video clip of 6 or 10 seconds based on a text prompt. Users provide an image URL and optional prompt optimization to guide the video generation process.",
+   "schema": {
+    "type": "object",
+    "title": "Minimax Hailuo 2.3 Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "prompt_optimizer": {
+      "type": "boolean",
+      "title": "Prompt optimizer",
+      "default": true
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "prompt_optimizer",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "prompt_optimizer": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman speeds through city traffic on a purple motorcycle. She rides between a gray sedan and a yellow taxi toward an intersection. Leaning the bike sharply, she sweeps through a turn across the crosswalk."
+   },
+   "durations": [
+    6,
+    10
+   ],
+   "price": {
+    "min": 0.0117,
+    "max": 0.014,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "minimax/hailuo-2.3/standard/text-to-video",
+   "title": "MiniMax Hailuo 2.3 Standard",
+   "variant": "Text to Video (Standard)",
+   "system": "minimax-v2.3",
+   "operation": "text2video",
+   "description": "Generates short videos from text or images with fluid body motion and natural facial expressions.",
+   "schema": {
+    "type": "object",
+    "title": "Minimax Hailuo 2.3 Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       6,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 6
+     },
+     "prompt_optimizer": {
+      "type": "boolean",
+      "title": "Prompt optimizer",
+      "default": true
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "prompt_optimizer",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "prompt_optimizer": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman speeds through city traffic on a purple motorcycle. She rides between a gray sedan and a yellow taxi toward an intersection. Leaning the bike sharply, she sweeps through a turn across the crosswalk."
+   },
+   "durations": [
+    6,
+    10
+   ],
+   "price": {
+    "min": 0.0117,
+    "max": 0.014,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "pixverse/v6/image-to-video",
+   "title": "PixVerse V6",
+   "variant": "Image to Video",
+   "system": "pixverse-v6",
+   "operation": "image2video",
+   "description": "PixVerse V6 Image to Video on Runware with optional native synchronized audio.",
+   "schema": {
+    "type": "object",
+    "title": "PixVerse V6 Image to Video Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "number",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 1
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First frame",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "360p",
+       "540p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Last frame",
+      "format": "uri"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "maxLength": 2048,
+      "minLength": 1
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "negative_prompt",
+     "duration",
+     "resolution",
+     "generate_audio",
+     "seed",
+     "image_url",
+     "end_image_url",
+     "*"
+    ],
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man races to catch a train when the entire station freezes mid-motion. He slips aboard, settles into a seat, and casually taps his headphone. The world snaps back into motion, and the train carries him away."
+   },
+   "durations": [
+    1,
+    15
+   ],
+   "price": {
+    "min": 0.0298,
+    "max": 0.0978,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "pixverse/v6/text-to-video",
+   "title": "PixVerse V6",
+   "variant": "Text to Video",
+   "system": "pixverse-v6",
+   "operation": "text2video",
+   "description": "Generates videos from text or images with native sound and control over the first and last frames.",
+   "schema": {
+    "type": "object",
+    "title": "PixVerse V6 Text to Video Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "title": "Seed",
+      "maximum": 2147483647,
+      "minimum": 0
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "maxLength": 5000,
+      "minLength": 1,
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "number",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 1
+     },
+     "resolution": {
+      "enum": [
+       "360p",
+       "540p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "4:3",
+       "1:1",
+       "3:4",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect ratio",
+      "default": "16:9"
+     },
+     "generate_audio": {
+      "type": "boolean",
+      "title": "Generate audio",
+      "default": true
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "maxLength": 2048,
+      "minLength": 1
+     }
+    },
+    "additionalProperties": false
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "negative_prompt",
+     "duration",
+     "resolution",
+     "generate_audio",
+     "seed",
+     "aspect_ratio",
+     "*"
+    ],
+    "resolution": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "generate_audio": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A man races to catch a train when the entire station freezes mid-motion. He slips aboard, settles into a seat, and casually taps his headphone. The world snaps back into motion, and the train carries him away."
+   },
+   "durations": [
+    1,
+    15
+   ],
+   "price": {
+    "min": 0.0298,
+    "max": 0.0978,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  },
+  {
+   "slug": "wan/v2.6/image-to-video",
+   "title": "Wan 2.6",
+   "variant": "Image to Video",
+   "system": "wan/v2.6/image-to-video",
+   "operation": "image2video",
+   "description": "Wan 2.6 - Image to Video. Configured Alibaba route; cloned from wan-26/image-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+     "prompt",
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 10000000,
+      "minimum": -1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10,
+       15
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "audio_url": {
+      "type": "string",
+      "title": "Audio URL",
+      "format": "uri"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "prompt_extend": {
+      "type": "boolean",
+      "default": false
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt_extend": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A guitarist strikes a chord in the middle of a barren desert. Grass and wildflowers spread from his feet as trees rise from the sand. He keeps playing while the desert transforms into a forest."
+   },
+   "durations": [
+    5,
+    10,
+    15
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "wan/v2.6/reference-to-video",
+   "title": "Wan 2.6",
+   "variant": "Reference to Video",
+   "system": "wan/v2.6/reference-to-video",
+   "operation": "image2video",
+   "description": "Wan 2.6 - Reference to Video. Configured Alibaba route; cloned from wan-26/references-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+     "prompt",
+     "video_urls"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video URL",
+       "format": "uri"
+      },
+      "maxItems": 3,
+      "minItems": 1
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1",
+       "4:3",
+       "3:4"
+      ],
+      "type": "string",
+      "default": "16:9"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A guitarist strikes a chord in the middle of a barren desert. Grass and wildflowers spread from his feet as trees rise from the sand. He keeps playing while the desert transforms into a forest."
+   },
+   "durations": [
+    5,
+    10
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "wan/v2.6/text-to-video",
+   "title": "Wan 2.6",
+   "variant": "Text to Video",
+   "system": "wan/v2.6/text-to-video",
+   "operation": "text2video",
+   "description": "Generates multi-shot videos from text or images with native sound and optional video references.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 10000000,
+      "minimum": -1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "enum": [
+       5,
+       10,
+       15
+      ],
+      "type": "integer",
+      "title": "Duration",
+      "default": 5
+     },
+     "audio_url": {
+      "type": "string",
+      "title": "Audio URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "multi_shots": {
+      "type": "boolean",
+      "default": false
+     },
+     "prompt_extend": {
+      "type": "boolean",
+      "default": false
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "multi_shots": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt_extend": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A guitarist strikes a chord in the middle of a barren desert. Grass and wildflowers spread from his feet as trees rise from the sand. He keeps playing while the desert transforms into a forest."
+   },
+   "durations": [
+    5,
+    10,
+    15
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "wan/v2.7/image-to-video",
+   "title": "Wan 2.7",
+   "variant": "Image to Video",
+   "system": "wan/v2.7/image-to-video",
+   "operation": "image2video",
+   "description": "Wan 2.7 - Image to Video. Configured Alibaba route; cloned from wan-27/image-to-video.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+     "image_url"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "audio_url": {
+      "type": "string",
+      "title": "Audio URL",
+      "format": "uri"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "end_image_url": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "uri"
+     },
+     "prompt_extend": {
+      "type": "boolean",
+      "default": false
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "end_image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt_extend": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "last_image_url": {
+     "ui:widget": "imageUrlString"
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a blue top eats noodles, then suddenly sneezes. She transforms into a polar bear, then a kangaroo, then a tiny meerkat. She turns back into herself, adjusts her necklace, and picks up her chopsticks again."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "wan/v2.7/reference-to-video",
+   "title": "Wan 2.7",
+   "variant": "Reference to Video",
+   "system": "wan/v2.7/reference-to-video",
+   "operation": "image2video",
+   "description": "Wan 2.7 - Reference to Video. Configured Alibaba route; cloned from wan-27/reference-to-video.",
+   "schema": {
+    "if": {
+     "required": [
+      "image_urls"
+     ],
+     "properties": {
+      "image_urls": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "else": {
+     "required": [
+      "video_urls"
+     ],
+     "properties": {
+      "video_urls": {
+       "type": "array",
+       "minItems": 1
+      }
+     }
+    },
+    "type": "object",
+    "title": "Wan 2.7 References",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 10,
+      "minimum": 2
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image",
+       "format": "uri"
+      }
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "video_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Video",
+       "format": "uri"
+      }
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "16:9"
+     },
+     "prompt_extend": {
+      "type": "boolean",
+      "default": false
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_urls",
+     "aspect_ratio",
+     "resolution",
+     "duration",
+     "*"
+    ],
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:field": "radioCard",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "video_urls": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "prompt_extend": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a blue top eats noodles, then suddenly sneezes. She transforms into a polar bear, then a kangaroo, then a tiny meerkat. She turns back into herself, adjusts her necklace, and picks up her chopsticks again."
+   },
+   "durations": [
+    2,
+    10
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "wan/v2.7/text-to-video",
+   "title": "Wan 2.7",
+   "variant": "Text to Video",
+   "system": "wan/v2.7/text-to-video",
+   "operation": "text2video",
+   "description": "Generates videos from text or images with native audio and consistent characters across scenes.",
+   "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483646,
+      "minimum": 1
+     },
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 2
+     },
+     "audio_url": {
+      "type": "string",
+      "title": "Audio URL",
+      "format": "uri"
+     },
+     "resolution": {
+      "enum": [
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "default": "720p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "16:9",
+       "9:16",
+       "1:1",
+       "4:3",
+       "3:4"
+      ],
+      "type": "string",
+      "title": "Aspect Ratio",
+      "default": "16:9"
+     },
+     "prompt_extend": {
+      "type": "boolean",
+      "default": false
+     },
+     "negative_prompt": {
+      "type": "string",
+      "title": "Negative prompt",
+      "default": ""
+     }
+    }
+   },
+   "ui": {
+    "seed": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString",
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "prompt_extend": {
+     "ui:options": {
+      "advanced": true
+     }
+    },
+    "negative_prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": true
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman in a blue top eats noodles, then suddenly sneezes. She transforms into a polar bear, then a kangaroo, then a tiny meerkat. She turns back into herself, adjusts her necklace, and picks up her chopsticks again."
+   },
+   "durations": [
+    2,
+    15
+   ],
+   "price": {
+    "min": 0.05,
+    "max": 0.075,
+    "unit": "sec"
+   },
+   "discountExpires": "2026-10-01T00:00:00Z"
+  },
+  {
+   "slug": "xai/grok-imagine-video/v1.5/reference-to-video",
+   "title": "Grok Imagine Video 1.5",
+   "variant": "Grok Imagine Video 1.5",
+   "system": "grok_video",
+   "operation": "image2video",
+   "description": "Creates videos from text prompts or still images, with 1080p resolution and clips up to 15 seconds.",
+   "schema": {
+    "type": "object",
+    "title": "Grok Imagine Video 1.5 Reference Playground",
+    "required": [
+     "prompt"
+    ],
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "title": "Prompt",
+      "description": "Write your prompt here"
+     },
+     "duration": {
+      "type": "integer",
+      "title": "Duration",
+      "default": 5,
+      "maximum": 15,
+      "minimum": 1
+     },
+     "audio_url": {
+      "type": "string",
+      "title": "Reference audio",
+      "format": "uri"
+     },
+     "image_url": {
+      "type": "string",
+      "title": "First-frame image",
+      "format": "uri"
+     },
+     "image_urls": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "title": "Image",
+       "format": "uri"
+      },
+      "title": "Reference images",
+      "maxItems": 7,
+      "minItems": 0
+     },
+     "resolution": {
+      "enum": [
+       "480p",
+       "720p",
+       "1080p"
+      ],
+      "type": "string",
+      "title": "Resolution",
+      "default": "480p"
+     },
+     "aspect_ratio": {
+      "enum": [
+       "auto",
+       "1:1",
+       "16:9",
+       "9:16",
+       "4:3",
+       "3:4",
+       "3:2",
+       "2:3"
+      ],
+      "type": "string",
+      "default": "auto"
+     }
+    }
+   },
+   "ui": {
+    "prompt": {
+     "ui:widget": "textarea",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "duration": {
+     "ui:widget": "range",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "ui:order": [
+     "prompt",
+     "image_url",
+     "image_urls",
+     "audio_url",
+     "aspect_ratio",
+     "duration",
+     "resolution",
+     "*"
+    ],
+    "audio_url": {
+     "ui:widget": "audioUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_url": {
+     "ui:widget": "imageUrlString",
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "image_urls": {
+     "items": {
+      "ui:widget": "imageUrlString"
+     },
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "resolution": {
+     "ui:options": {
+      "advanced": false
+     }
+    },
+    "aspect_ratio": {
+     "ui:options": {
+      "advanced": false
+     }
+    }
+   },
+   "initial": {
+    "prompt": "A woman walks down a street and reaches into her green bag. Her belongings float in a beam of light, and she grabs pink sunglasses and puts them on. She floats upward with the objects as the camera pulls back to reveal Earth below."
+   },
+   "durations": [
+    1,
+    15
+   ],
+   "price": {
+    "min": 0.08,
+    "max": 0.25,
+    "unit": "sec"
+   },
+   "discountExpires": null
+  }
+ ]
+}

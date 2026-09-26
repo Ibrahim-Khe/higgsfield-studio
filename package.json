@@ -1,0 +1,15 @@
+{
+  "name": "higgsfield-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local studio UI for the Higgsfield video API with live cost preview",
+  "scripts": {
+    "start": "node server.mjs",
+    "update-catalog": "node scripts/update-catalog.mjs",
+    "calibrate": "node scripts/calibrate-prices.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

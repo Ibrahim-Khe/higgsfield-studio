@@ -1,0 +1,881 @@
+{
+ "updated": "2026-09-26T19:47:53.504Z",
+ "models": {
+  "alibaba/happy-horse/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "alibaba/happy-horse/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "alibaba/happy-horse/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "alibaba/happy-horse/v1.1/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.126,
+     "list_ps": 0.18
+    }
+   }
+  },
+  "alibaba/happy-horse/v1.1/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.126,
+     "list_ps": 0.18
+    }
+   }
+  },
+  "alibaba/happy-horse/v1.1/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.126,
+     "list_ps": 0.18
+    }
+   }
+  },
+  "alibaba/wan-3.0-prime/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"480p\"": {
+     "ps": 0.047599999999999996,
+     "list_ps": 0.06799999999999999
+    },
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "alibaba/wan-3.0-prime/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"480p\"": {
+     "ps": 0.047599999999999996,
+     "list_ps": 0.06799999999999999
+    },
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "alibaba/wan-3.0-prime/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"480p\"": {
+     "ps": 0.047599999999999996,
+     "list_ps": 0.06799999999999999
+    },
+    "resolution=\"720p\"": {
+     "ps": 0.098,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.196,
+     "list_ps": 0.27999999999999997
+    }
+   }
+  },
+  "kling-video/o3/first-last-frame": {
+   "params": [
+    "sound",
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"|mode=\"std\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    },
+    "sound=\"on\"|mode=\"pro\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    },
+    "sound=\"off\"|mode=\"std\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    },
+    "sound=\"off\"|mode=\"pro\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/o3/image-reference": {
+   "params": [
+    "sound",
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"|mode=\"std\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    },
+    "sound=\"on\"|mode=\"pro\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    },
+    "sound=\"off\"|mode=\"std\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    },
+    "sound=\"off\"|mode=\"pro\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/o3/video-reference": {
+   "params": [
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "mode=\"std\"": {
+     "ps": 0.06939999999999999,
+     "list_ps": 0.1262
+    },
+    "mode=\"pro\"": {
+     "ps": 0.09240000000000001,
+     "list_ps": 0.168
+    }
+   }
+  },
+  "kling-video/omni/first-last-frame": {
+   "params": [
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "mode=\"std\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    },
+    "mode=\"pro\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/omni/image-reference": {
+   "params": [
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "mode=\"std\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    },
+    "mode=\"pro\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/omni/video-reference": {
+   "params": [
+    "mode"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "mode=\"std\"": {
+     "ps": 0.06939999999999999,
+     "list_ps": 0.1262
+    },
+    "mode=\"pro\"": {
+     "ps": 0.09240000000000001,
+     "list_ps": 0.168
+    }
+   }
+  },
+  "kling-video/v2.5-turbo/pro/image-to-video": {
+   "params": [],
+   "linear": false,
+   "discount": 0.45,
+   "credits_per_usd": 15.958549222797927,
+   "table": {
+    "|duration=5": {
+     "total": 0.193,
+     "list_total": 0.351
+    },
+    "|duration=10": {
+     "total": 0.385,
+     "list_total": 0.7
+    }
+   }
+  },
+  "kling-video/v2.5-turbo/pro/text-to-video": {
+   "params": [],
+   "linear": false,
+   "discount": 0.45,
+   "credits_per_usd": 15.958549222797927,
+   "table": {
+    "|duration=5": {
+     "total": 0.193,
+     "list_total": 0.351
+    },
+    "|duration=10": {
+     "total": 0.385,
+     "list_total": 0.7
+    }
+   }
+  },
+  "kling-video/v2.5-turbo/standard/image-to-video": {
+   "params": [],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 15.931034482758621,
+   "table": {
+    "": {
+     "ps": 0.023200000000000002,
+     "list_ps": 0.0422
+    }
+   }
+  },
+  "kling-video/v2.6/pro/image-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    },
+    "sound=\"off\"": {
+     "ps": 0.0386,
+     "list_ps": 0.0702
+    }
+   }
+  },
+  "kling-video/v2.6/pro/text-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    },
+    "sound=\"off\"": {
+     "ps": 0.0386,
+     "list_ps": 0.0702
+    }
+   }
+  },
+  "kling-video/v3.0-turbo/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    }
+   }
+  },
+  "kling-video/v3.0-turbo/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.077,
+     "list_ps": 0.13999999999999999
+    }
+   }
+  },
+  "kling-video/v3.0/4k/image-to-video": {
+   "params": [],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "": {
+     "ps": 0.231,
+     "list_ps": 0.42000000000000004
+    }
+   }
+  },
+  "kling-video/v3.0/4k/text-to-video": {
+   "params": [],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "": {
+     "ps": 0.231,
+     "list_ps": 0.42000000000000004
+    }
+   }
+  },
+  "kling-video/v3.0/pro/image-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.09240000000000001,
+     "list_ps": 0.168
+    },
+    "sound=\"off\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/v3.0/pro/text-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 16,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.09240000000000001,
+     "list_ps": 0.168
+    },
+    "sound=\"off\"": {
+     "ps": 0.0616,
+     "list_ps": 0.11200000000000002
+    }
+   }
+  },
+  "kling-video/v3.0/std/image-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 15.976945244956772,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.06939999999999999,
+     "list_ps": 0.1262
+    },
+    "sound=\"off\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    }
+   }
+  },
+  "kling-video/v3.0/std/text-to-video": {
+   "params": [
+    "sound"
+   ],
+   "linear": true,
+   "discount": 0.45,
+   "credits_per_usd": 15.976945244956772,
+   "table": {
+    "sound=\"on\"": {
+     "ps": 0.06939999999999999,
+     "list_ps": 0.1262
+    },
+    "sound=\"off\"": {
+     "ps": 0.046200000000000005,
+     "list_ps": 0.084
+    }
+   }
+  },
+  "lightricks/ltx-2.5/image-to-video/fast": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.09000000000000001,
+     "list_ps": 0.09000000000000001
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.13,
+     "list_ps": 0.13
+    },
+    "resolution=\"2k\"": {
+     "ps": 0.18999999999999997,
+     "list_ps": 0.18999999999999997
+    },
+    "resolution=\"4k\"": {
+     "ps": 0.3,
+     "list_ps": 0.3
+    }
+   }
+  },
+  "lightricks/ltx-2.5/image-to-video/pro": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.12,
+     "list_ps": 0.12
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.17,
+     "list_ps": 0.17
+    }
+   }
+  },
+  "lightricks/ltx-2.5/text-to-video/fast": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.09000000000000001,
+     "list_ps": 0.09000000000000001
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.13,
+     "list_ps": 0.13
+    },
+    "resolution=\"2k\"": {
+     "ps": 0.18999999999999997,
+     "list_ps": 0.18999999999999997
+    },
+    "resolution=\"4k\"": {
+     "ps": 0.3,
+     "list_ps": 0.3
+    }
+   }
+  },
+  "lightricks/ltx-2.5/text-to-video/pro": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.12,
+     "list_ps": 0.12
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.17,
+     "list_ps": 0.17
+    }
+   }
+  },
+  "minimax/h3/image-to-video": {
+   "params": [],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "": {
+     "ps": 0.091,
+     "list_ps": 0.13
+    }
+   }
+  },
+  "minimax/h3/text-to-video": {
+   "params": [],
+   "linear": true,
+   "discount": 0.3,
+   "credits_per_usd": 16,
+   "table": {
+    "": {
+     "ps": 0.091,
+     "list_ps": 0.13
+    }
+   }
+  },
+  "minimax/hailuo-2.3/standard/image-to-video": {
+   "params": [],
+   "linear": false,
+   "discount": 0.75,
+   "credits_per_usd": 16,
+   "table": {
+    "|duration=6": {
+     "total": 0.07,
+     "list_total": 0.28
+    },
+    "|duration=10": {
+     "total": 0.14,
+     "list_total": 0.56
+    }
+   }
+  },
+  "minimax/hailuo-2.3/standard/text-to-video": {
+   "params": [],
+   "linear": false,
+   "discount": 0.75,
+   "credits_per_usd": 16,
+   "table": {
+    "|duration=6": {
+     "total": 0.07,
+     "list_total": 0.28
+    },
+    "|duration=10": {
+     "total": 0.14,
+     "list_total": 0.56
+    }
+   }
+  },
+  "pixverse/v6/image-to-video": {
+   "params": [
+    "resolution",
+    "generate_audio"
+   ],
+   "linear": true,
+   "discount": 0.15,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"360p\"|generate_audio=true": {
+     "ps": 0.0298,
+     "list_ps": 0.035199999999999995
+    },
+    "resolution=\"360p\"|generate_audio=false": {
+     "ps": 0.0214,
+     "list_ps": 0.0252
+    },
+    "resolution=\"540p\"|generate_audio=true": {
+     "ps": 0.038400000000000004,
+     "list_ps": 0.045200000000000004
+    },
+    "resolution=\"540p\"|generate_audio=false": {
+     "ps": 0.0298,
+     "list_ps": 0.035199999999999995
+    },
+    "resolution=\"720p\"|generate_audio=true": {
+     "ps": 0.051000000000000004,
+     "list_ps": 0.06
+    },
+    "resolution=\"720p\"|generate_audio=false": {
+     "ps": 0.038400000000000004,
+     "list_ps": 0.045200000000000004
+    },
+    "resolution=\"1080p\"|generate_audio=true": {
+     "ps": 0.0978,
+     "list_ps": 0.1152
+    },
+    "resolution=\"1080p\"|generate_audio=false": {
+     "ps": 0.0766,
+     "list_ps": 0.0902
+    }
+   }
+  },
+  "pixverse/v6/text-to-video": {
+   "params": [
+    "resolution",
+    "generate_audio"
+   ],
+   "linear": true,
+   "discount": 0.15,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"360p\"|generate_audio=true": {
+     "ps": 0.0298,
+     "list_ps": 0.035199999999999995
+    },
+    "resolution=\"360p\"|generate_audio=false": {
+     "ps": 0.0214,
+     "list_ps": 0.0252
+    },
+    "resolution=\"540p\"|generate_audio=true": {
+     "ps": 0.038400000000000004,
+     "list_ps": 0.045200000000000004
+    },
+    "resolution=\"540p\"|generate_audio=false": {
+     "ps": 0.0298,
+     "list_ps": 0.035199999999999995
+    },
+    "resolution=\"720p\"|generate_audio=true": {
+     "ps": 0.051000000000000004,
+     "list_ps": 0.06
+    },
+    "resolution=\"720p\"|generate_audio=false": {
+     "ps": 0.038400000000000004,
+     "list_ps": 0.045200000000000004
+    },
+    "resolution=\"1080p\"|generate_audio=true": {
+     "ps": 0.0978,
+     "list_ps": 0.1152
+    },
+    "resolution=\"1080p\"|generate_audio=false": {
+     "ps": 0.0766,
+     "list_ps": 0.0902
+    }
+   }
+  },
+  "wan/v2.6/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"480p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "wan/v2.6/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "wan/v2.6/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "wan/v2.7/image-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "wan/v2.7/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "wan/v2.7/text-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0.5,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"720p\"": {
+     "ps": 0.05,
+     "list_ps": 0.1
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.075,
+     "list_ps": 0.15
+    }
+   }
+  },
+  "xai/grok-imagine-video/v1.5/reference-to-video": {
+   "params": [
+    "resolution"
+   ],
+   "linear": true,
+   "discount": 0,
+   "credits_per_usd": 16,
+   "table": {
+    "resolution=\"480p\"": {
+     "ps": 0.08,
+     "list_ps": 0.08
+    },
+    "resolution=\"720p\"": {
+     "ps": 0.13999999999999999,
+     "list_ps": 0.13999999999999999
+    },
+    "resolution=\"1080p\"": {
+     "ps": 0.25,
+     "list_ps": 0.25
+    }
+   }
+  }
+ }
+}
